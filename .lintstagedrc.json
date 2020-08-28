@@ -1,0 +1,4 @@
+{
+  "*.js": ["eslint --fix", "git add"],
+  "*.rb": ["rubocop -a -c .rubocop.yml --fail-level E", "git add"]
+}
