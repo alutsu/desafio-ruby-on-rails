@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
+  devise_for :users
+
   get 'transactions/index'
   get 'home/index'
-  get 'home/upload'
-  devise_for :users
-  resources :users
+  post '/upload', to: 'home#upload'
 
-  root 'users#index'
+  resources :transactions, only: %i[index] do
+    collection do
+      get :search
+    end
+  end
+
+  root 'home#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

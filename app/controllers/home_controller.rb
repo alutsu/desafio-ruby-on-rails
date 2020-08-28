@@ -1,5 +1,8 @@
 class HomeController < ApplicationController
   def index; end
 
-  def upload; end
+  def upload
+    CnabUpload::UploadService.new(params[:file]).call
+    redirect_to transactions_path
+  end
 end
