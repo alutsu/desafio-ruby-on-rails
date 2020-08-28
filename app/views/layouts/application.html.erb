@@ -10,7 +10,7 @@
   </head>
 
   <body class="bg-gray-500 ">
-    <%= render 'layouts/header' %>
+    <%= render 'layouts/header' unless !current_user %>
     <%= yield %>
   </body>
 </html>
