@@ -81,6 +81,9 @@ GEM
     database_cleaner-active_record (1.8.0)
       activerecord
       database_cleaner (~> 1.8.0)
+    debase (0.2.4.1)
+      debase-ruby_core_source (>= 0.10.2)
+    debase-ruby_core_source (0.10.9)
     devise (4.7.2)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -205,6 +208,8 @@ GEM
       activesupport (>= 4.2.0)
       rack (>= 1.1)
       rubocop (>= 0.87.0)
+    ruby-debug-ide (0.7.2)
+      rake (>= 0.8.1)
     ruby-progressbar (1.10.1)
     rubyzip (2.3.0)
     sass-rails (6.0.0)
@@ -271,6 +276,7 @@ DEPENDENCIES
   cancancan
   capybara (>= 2.15)
   database_cleaner-active_record
+  debase
   devise
   factory_bot_rails
   jbuilder (~> 2.7)
@@ -282,6 +288,7 @@ DEPENDENCIES
   rspec-rails (~> 4.0)
   rubocop
   rubocop-rails
+  ruby-debug-ide
   sass-rails (>= 6)
   selenium-webdriver
   spring
