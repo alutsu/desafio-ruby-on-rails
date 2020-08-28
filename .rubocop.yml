@@ -4,6 +4,9 @@ AllCops:
     - 'db/**/*'
     - 'config/**/*'
     - 'libs/**/*'
+    - 'vendor/**/*'
+    - 'spec/factories/**/*'
+    - 'tmp/**/*'
   NewCops: enable
 
 Rails:
