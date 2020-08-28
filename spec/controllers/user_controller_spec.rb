@@ -15,7 +15,7 @@ RSpec.describe UsersController, type: :controller do
   context 'GET #index for not logged user' do
     it 'should not render index if user are not authenticated' do
       get :index
-      expect(response).to have_http_status(302)
+      expect(response).to redirect_to(new_user_session_path)
     end
   end
 end
