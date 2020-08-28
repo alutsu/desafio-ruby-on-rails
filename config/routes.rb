@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  get 'transactions/index'
   get 'home/index'
   post '/upload', to: 'home#upload'
 
