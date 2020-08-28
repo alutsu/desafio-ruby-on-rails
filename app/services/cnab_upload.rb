@@ -17,7 +17,7 @@ module CnabUpload
         time = value_to_time(row[43..47])
         store = Store.find_or_create_by(name: store_name, owner: store_owner)
         transaction_type = TransactionType.find(row[0])
-        transaction = transaction_type.transaction.new
+        transaction = transaction_type.transactions.new
         transaction.store = store
         transaction.date = date
         transaction.value = value

@@ -1,3 +1,6 @@
 class TransactionsController < ApplicationController
-  def index; end
+  def index
+    @q = Negotiation.includes(:payment, :store).ransack(params[:q])
+    @negotiations = @q.result
+  end
 end
