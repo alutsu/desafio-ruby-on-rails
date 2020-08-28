@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20_200_828_175_542) do
   create_table 'transactions', force: :cascade do |t|
     t.bigint 'transaction_type_id', null: false
     t.date 'date'
-    t.decimal 'value'
+    t.decimal 'value', precision: 10, scale: 2
     t.string 'cpf'
     t.string 'card_number'
     t.time 'time'

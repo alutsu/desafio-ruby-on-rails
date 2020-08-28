@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'transactions/index'
   get 'home/index'
   get 'home/upload'
   devise_for :users
