@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'home/index'
+  get 'home/upload'
   devise_for :users
   resources :users
 
