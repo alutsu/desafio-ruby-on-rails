@@ -1,66 +1,49 @@
-<div class="flex flex-row h-screen bg-gray-500">
-  <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8 content-center w-1/2">
-    <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-      <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+<div class="flex mt-3">
+  <div class="-my-2 w-full">
+    <div class="py-2 flex min-w-full justify-center p-6">
+      <div class="shadow overflow-x-auto border-b border-gray-200 sm:rounded-lg">
         <table class="min-w-full divide-y divide-gray-200">
           <thead>
             <tr>
               <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                Name
+                Tipo
               </th>
               <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                Title
+                Data
               </th>
               <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                Email
+                Hora
               </th>
               <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                Role
+                CPF
               </th>
-              <th class="px-6 py-3 bg-gray-50"></th>
+              <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                Cartão
+              </th>
+              <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                Loja
+              </th>
+              <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                Dono
+              </th>
+              <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                Valor
+              </th>
             </tr>
           </thead>
           <tbody>
-            <!-- Odd row -->
-            <tr class="bg-white">
-              <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 font-medium text-gray-900">
-                Jane Cooper
-              </td>
-              <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
-                Regional Paradigm Technician
-              </td>
-              <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
-                jane.cooper@example.com
-              </td>
-              <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
-                Admin
-              </td>
-              <td class="px-6 py-4 whitespace-no-wrap text-right text-sm leading-5 font-medium">
-                <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
-              </td>
-            </tr>
-
-            <!-- Even row -->
-            <tr class="bg-gray-50">
-              <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 font-medium text-gray-900">
-                Cody Fisher
-              </td>
-              <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
-                Product Directives Officer
-              </td>
-              <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
-                cody.fisher@example.com
-              </td>
-              <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
-                Owner
-              </td>
-              <td class="px-6 py-4 whitespace-no-wrap text-right text-sm leading-5 font-medium">
-                <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
-              </td>
-            </tr>
-
-            <!-- More rows... -->
+            <%= render @transactions %>
           </tbody>
+          <tfoot>
+            <tr class="bg-white">
+              <td class="px-6 py-4 whitespace-no-wrap text-sm font-bold leading-5 text-gray-500">
+                Saldo
+              </td>
+              <td class="px-6 py-4 whitespace-no-wrap text-sm font-bold text-right leading-5 text-gray-500" colspan=7>
+                <%= number_to_currency(calc_balance(@transactions), unit: 'R$') %>
+              </td>
+            </tr>
+          </tfoot>
         </table>
       </div>
     </div>

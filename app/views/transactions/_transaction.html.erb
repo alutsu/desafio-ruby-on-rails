@@ -1,0 +1,45 @@
+<tr class="<%= transaction.id % 2 == 0 ? 'bg-white' : 'bg-gray-100' %>">
+  <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 font-medium text-gray-900">
+    <%= transaction.transaction_type.description %> <%= transaction.transaction_type.signal %> 
+  </td>
+  <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
+    <%= transaction.date.strftime("%d/%m/%Y") %>
+  </td>
+  <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
+    <%= transaction.time.strftime("%H:%M:%S") %>
+  </td>
+  <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
+    <%= transaction.cpf %> 
+  </td>
+  <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
+    <%= transaction.card_number %> 
+  </td>
+  <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
+    <%= transaction.store.name %> 
+  </td>
+  <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
+    <%= transaction.store.owner %> 
+  </td>
+  <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
+    <%= number_to_currency(transaction.value, unit: 'R$') %> 
+  </td>
+</tr>
+
+<%# <!-- Even row -->
+<tr class="bg-gray-50">
+  <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 font-medium text-gray-900">
+    Cody Fisher
+  </td>
+  <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
+    Product Directives Officer
+  </td>
+  <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
+    cody.fisher@example.com
+  </td>
+  <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
+    Owner
+  </td>
+  <td class="px-6 py-4 whitespace-no-wrap text-right text-sm leading-5 font-medium">
+    <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+  </td>
+</tr> %>

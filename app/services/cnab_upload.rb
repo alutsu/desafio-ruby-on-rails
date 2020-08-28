@@ -14,7 +14,7 @@ module CnabUpload
         value = row[9..18].to_f / 100
         cpf = row[19..29]
         card_number = row[30..42]
-        time = value_to_time(row[43..47])
+        time = value_to_time(row[42..47])
         store = Store.find_or_create_by(name: store_name, owner: store_owner)
         transaction_type = TransactionType.find(row[0])
         transaction = transaction_type.transactions.new
@@ -24,11 +24,12 @@ module CnabUpload
         transaction.cpf = cpf
         transaction.card_number = card_number
         transaction.time = time
+        transaction.save
       end
     end
 
     def value_to_time(time)
-      time.gsub(/^(\d{2})(\d{2})(\d{2})$/, '\1:\2:\3').to_time
+      Time.parse(time.gsub(/^(\d{2})(\d{2})(\d{2})$/, '\1:\2:\3'))
     end
   end
 end
