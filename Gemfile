@@ -27,6 +27,7 @@ gem 'cancancan'
 gem 'devise'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
+gem 'kaminari'
 gem 'ransack'
 
 # Reduces boot times through caching; required in config/boot.rb
