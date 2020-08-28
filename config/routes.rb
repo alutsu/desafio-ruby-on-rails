@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
 
-  get 'home/index'
   post '/upload', to: 'home#upload'
 
   resources :transactions, only: %i[index] do

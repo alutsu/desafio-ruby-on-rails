@@ -1,7 +1,7 @@
 require 'rails_helper'
 require_relative '../support/devise'
 
-RSpec.describe UsersController, type: :controller do
+RSpec.describe HomeController, type: :controller do
   context 'GET #index for logged user' do
     login_user
 
