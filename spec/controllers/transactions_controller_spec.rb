@@ -10,6 +10,17 @@ RSpec.describe TransactionsController, type: :controller do
       expect(response).to have_http_status(200)
       expect(response).to render_template(:index)
     end
+
+    it 'should have an empty array' do
+      get :index
+      expect(assigns(:transactions)).to be_empty
+    end
+
+    it 'should have one transaction' do
+      create(:transaction)
+      get :index
+      expect(assigns(:transactions)).to_not be_empty
+    end
   end
 
   context 'GET #index for not logged user' do
