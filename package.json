@@ -19,6 +19,7 @@
     "git-commit-msg-linter": "^2.4.5",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.13",
+    "tailwindcss": "^1.7.5",
     "webpack-dev-server": "^3.11.0"
   }
 }
