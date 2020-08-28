@@ -5,7 +5,7 @@ AllCops:
     - 'config/**/*'
     - 'libs/**/*'
     - 'vendor/**/*'
-    - 'spec/factories/**/*'
+    - 'spec/**/*'
     - 'tmp/**/*'
   NewCops: enable
 
