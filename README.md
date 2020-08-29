@@ -62,7 +62,7 @@ Sua tarefa é criar uma interface web que aceite upload do [arquivo CNAB](https:
 * Alimente o banco de dados com dados básicos dos seeds
 > docker-compose run --rm app bundle exec rails db:seed
 
-* Para rodar os testes, execure:
+* Para rodar os testes, execute:
 > docker-compose run --rm app bundle exec rspec
 
 * Abra o arquivo dentro da cobertura dos testes no seu browser
