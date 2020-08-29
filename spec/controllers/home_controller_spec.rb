@@ -18,4 +18,14 @@ RSpec.describe HomeController, type: :controller do
       expect(response).to redirect_to(new_user_session_path)
     end
   end
+
+  context 'POST #upload' do
+    login_user
+
+    it 'should success and render to transaction page' do
+      post :upload, params: { file: Rack::Test::UploadedFile.new("#{Rails.root}/CNAB.txt", '.txt') }
+      expect(response).to have_http_status(302)
+      expect(response).to redirect_to(transactions_path)
+    end
+  end
 end
