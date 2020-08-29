@@ -30,10 +30,10 @@ FactoryBot.define do
 
     transaction_type { create(:transaction_type) }
     date { '2020-08-28' }
-    value { 9.99 }
+    value { rand(9.99...78.33) }
     cpf { 'MyString' }
     card_number { 'MyString' }
     time { '2020-08-28 17:55:42' }
-    store factory: :store
+    store { create(:store) }
   end
 end
