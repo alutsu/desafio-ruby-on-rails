@@ -11,15 +11,15 @@ class User < ApplicationRecord
   validates :name, :email, :admin, presence: true
 
   def self.from_omniauth(auth)
-    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-      user.provider = auth.provider
-      user.uid = auth.uid
-      user.email = auth.info.email
+    where(provider: auth[:provider], uid: auth[:uid]).first_or_create do |user|
+      user.provider = auth[:provider]
+      user.uid = auth[:uid]
+      user.email = auth[:info][:email]
       user.admin = true
       password = Devise.friendly_token[0, 20]
       user.password = password
       user.password_confirmation = password
-      user.name = auth.info.name   # assuming the user model has a name
+      user.name = auth[:info][:name]
     end
   end
 end
