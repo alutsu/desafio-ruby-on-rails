@@ -64,3 +64,6 @@ Sua tarefa é criar uma interface web que aceite upload do [arquivo CNAB](https:
 
 * Abra o projeto no browser:
 > http://localhost:3000
+
+* URL do projeto em produção
+> https://bycoders-challenge.herokuapp.com/
