@@ -7,9 +7,6 @@ RSpec.describe TransactionsHelper, type: :helper do
       create_list(:transaction, 10, :positive)
       create_list(:transaction, 10, :negative)
       transactions = Transaction.all
-      transactions.each do |transaction|
-        puts transaction.value
-      end
 
       expect(helper.calc_balance(transactions)).to be_kind_of(Float)
     end
