@@ -9,9 +9,15 @@ FactoryBot.define do
     trait :invalid_signal do
       signal { nil }
     end
+    trait :positive do
+      signal { '+' }
+    end
+    trait :negative do
+      signal { '-' }
+    end
 
     description { 'MyString' }
     nature { 'MyString' }
-    signal { 'MyString' }
+    signal { '+' }
   end
 end
