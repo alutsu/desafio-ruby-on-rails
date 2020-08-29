@@ -65,7 +65,7 @@ Sua tarefa é criar uma interface web que aceite upload do [arquivo CNAB](https:
 * Para rodar os testes, execute:
 > docker-compose run --rm app bundle exec rspec
 
-* Abra o arquivo dentro da cobertura dos testes no seu browser
+* Abra o arquivo da cobertura dos testes no seu browser
 > app/coverage/index.html
 
 * Execute o projeto
