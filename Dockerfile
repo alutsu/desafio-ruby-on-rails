@@ -9,7 +9,7 @@ nodejs yarn build-essential libpq-dev imagemagick git-all nano
 
 RUN gem install bundler
 
-RUN yarn install --check-files
+RUN gem install rails
 
 ENV INSTALL_PATH /bycoderschallenge
 

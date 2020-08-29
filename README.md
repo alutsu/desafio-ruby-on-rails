@@ -53,6 +53,9 @@ Sua tarefa é criar uma interface web que aceite upload do [arquivo CNAB](https:
 * Instale as dependencias do yarn
 > docker-compose run --rm app yarn install --check-files
 
+* Instale as dependencias do rails
+> docker-compose run --rm app bundle install
+
 * Crie o banco de dados e execute as migrações
 > docker-compose run --rm app bundle exec rails db:create db:migrate
 
