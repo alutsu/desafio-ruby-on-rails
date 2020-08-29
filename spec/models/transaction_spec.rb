@@ -8,6 +8,7 @@ RSpec.describe Transaction, type: :model do
       expect(transaction).to be_valid
     end
   end
+
   context 'Validate Transaction fields' do
     it 'transaction_type should not be valid' do
       transaction = build(:transaction, :invalid_transaction_type)
@@ -43,6 +44,19 @@ RSpec.describe Transaction, type: :model do
       transaction = build(:transaction, :invalid_store)
 
       expect(transaction).to_not be_valid
+    end
+  end
+
+  context 'Validate calculation for balance' do
+    it 'should be a valid number' do
+      create_list(:transaction, 10, :positive)
+      create_list(:transaction, 10, :negative)
+      transactions = Transaction.all
+      transactions.each do |transaction|
+        puts transaction.value
+      end
+
+      expect(Transaction.calc_balance(transactions).to_f).to be_kind_of(Float)
     end
   end
 end
