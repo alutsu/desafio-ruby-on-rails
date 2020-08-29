@@ -21,8 +21,14 @@ FactoryBot.define do
     trait :invalid_store do
       store { nil }
     end
+    trait :positive do
+      transaction_type { create(:transaction_type, :positive) }
+    end
+    trait :negative do
+      transaction_type { create(:transaction_type, :negative) }
+    end
 
-    transaction_type factory: :transaction_type
+    transaction_type { create(:transaction_type) }
     date { '2020-08-28' }
     value { 9.99 }
     cpf { 'MyString' }
