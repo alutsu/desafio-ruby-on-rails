@@ -6,9 +6,11 @@ class Transaction < ApplicationRecord
 
   def self.calc_balance(transactions)
     transactions
+      .joins(:transaction_type)
       .where(transaction_types: { signal: '+' })
       .sum(:value) -
       transactions
+      .joins(:transaction_type)
       .where(transaction_types: { signal: '-' })
       .sum(:value)
   end
