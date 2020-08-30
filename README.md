@@ -1,5 +1,7 @@
 # Desafio programação - para vaga desenvolvedor Ruby on Rails
 
+[![Actions Stats](https://github.com/alutsu/desafio-ruby-on-rails/workflows/Build%20and%20Test/badge.svg)](https://github.com/alutsu/desafio-ruby-on-rails/actions)
+
 # Descrição do projeto
 
 Você recebeu um arquivo CNAB com os dados das movimentações finanaceira de várias lojas.
